@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/neutralAction"
+    tools:context=".SelectActivity">
+
+    <View
+        android:id="@+id/v_select_anim_input"
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:elevation="3dp"
+        android:layout_marginTop="50dp"
+        android:visibility="gone"
+        android:background="@drawable/input_select_style"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/v_select_title" />
+
+    <TextView
+        android:id="@+id/v_select_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Liste des joueurs"
+        android:textColor="#fff"
+        android:textSize="25sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:background="@drawable/layout_style_from"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp"
+        app:layout_constraintTop_toBottomOf="@id/v_select_title"
+        tools:layout_editor_absoluteX="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="Ajouter un joueur"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/v_select_inputFormUser"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:background="@drawable/input_select_style"
+            android:hint="Nom"
+            android:textColor="@color/black"
+            android:textColorHint="#aaa" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/v_select_radionBtnH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="40dp"
+                android:buttonTint="@color/neutralAction"
+                android:text="Homme" />
+
+            <RadioButton
+                android:id="@+id/v_select_radionBtnF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/neutralAction"
+                android:text="Femme" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/v_select_btnAdduser"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/blueVerite"
+            android:text="Ajouter"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/v_select_errorText"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="Error"
+            android:textColor="#f00"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/v_select_textdebud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="debug"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/v_select_listeRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:itemCount="4"
+        tools:listitem="@layout/itemuser"
+        app:layout_constraintBottom_toTopOf="@+id/v_select_btnGoNextPage"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/v_select_btnGoNextPage"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:layout_height="70dp"
+        android:text="Suivant"
+        android:background="@drawable/btn_select_next"
+        android:enabled="false"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

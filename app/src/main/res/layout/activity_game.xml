@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".GameActivity"
+    android:background="@color/orangeAction">
+
+    <TextView
+        android:id="@+id/v_game_NameTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:paddingVertical="20dp"
+        android:text="Name player"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/v_game_ViewBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:paddingVertical="10dp"
+        android:orientation="vertical"
+        tools:visibility="visible">
+
+        <Button
+            android:id="@+id/v_game_btnAct"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="100dp"
+            android:background="@drawable/btn_action_or_verite"
+            android:fontFamily="@font/aclonica"
+            android:textSize="25sp"
+            android:text="Action"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/v_game_btnVer"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+
+            android:background="@drawable/btn_action_or_verite"
+            android:fontFamily="@font/aclonica"
+            android:textSize="25sp"
+            android:text="Vérité"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/v_game_ViewQuestions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="gone">
+
+        <TextView
+            android:id="@+id/v_game_textQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="La Question"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:layout_marginTop="150dp"
+            android:layout_marginHorizontal="10dp"/>
+
+        <Button
+            android:id="@+id/v_game_btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Suivant"
+            android:layout_marginTop="300dp"
+            android:background="@drawable/btn_round_style"
+            android:layout_marginHorizontal="30dp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
